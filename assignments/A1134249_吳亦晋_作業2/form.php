@@ -10,14 +10,14 @@
     <p>請填寫以下資訊完成報名：</p>
     <hr>
 
-    <form action = "" method = "post" name = "information">
+    <form action = "result.php" method = "post" name = "information">
         <fieldset>
             <legend>個人資料</legend>
             <label for="name">姓名：</label> 
-            <input type="text" name="yourname" id="name" required>
+            <input type="text" name="uName" required>
             
-            <label for="age">生日：</label> 
-            <input type="date" name="yourage" id="age">
+            <label for="birth">生日：</label> 
+            <input type="date" name="uBirth">
             
             <label>性別:</label>
             <input type="radio" name="uGender" value="male"> <label for="male">男</label>
