@@ -1,0 +1,11 @@
+<?php
+declare(strict_types=1);
+
+/**
+ * 複製為 app.local.php 後可依環境覆寫（此 example 可提交版控）。
+ *
+ * 本地若自動偵測不正確，可手動設定：
+ */
+return [
+    'base_path' => '/final_project/public',
+];

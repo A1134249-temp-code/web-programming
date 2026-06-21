@@ -1,0 +1,16 @@
+# Common local artifacts
+.env
+.env.*
+!.env.example  <-- 加上這一行，告訴 Git 這個檔案是例外，必須上傳！
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs / temp
+*.log
+tmp/
+temp/
+

@@ -1,0 +1,13 @@
+<FilesMatch "^\.env$">
+    Require all denied
+</FilesMatch>
+
+RewriteEngine On
+RewriteRule ^(config|include|vendor) - [F,L]
+RewriteRule ^$ public/ [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^(.*)$ public/$1 [L]
+
+Options -Indexes

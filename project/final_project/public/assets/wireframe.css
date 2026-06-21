@@ -1,0 +1,280 @@
+/* Wireframe: 白底 + 灰階 + 黑字 */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, "Microsoft JhengHei", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  background: #FFFFFF;
+  color: #000000;
+}
+
+a { color: #000000; text-decoration: underline; }
+a:hover { color: #808080; }
+
+.wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.site-header {
+  border-bottom: 1px solid #000000;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.site-header h1 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.site-nav a {
+  margin-right: 16px;
+}
+
+.panel {
+  border: 1px solid #808080;
+  padding: 12px;
+  margin-bottom: 12px;
+  background: #FFFFFF;
+}
+
+.panel h2 {
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.muted { color: #808080; }
+
+label {
+  display: block;
+  margin: 8px 0 4px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="file"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #808080;
+  background: #FFFFFF;
+  color: #000000;
+  font: inherit;
+}
+
+textarea { min-height: 120px; resize: vertical; }
+
+button,
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid #000000;
+  background: #FFFFFF;
+  color: #000000;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button:hover,
+.btn:hover {
+  background: #D3D3D3;
+}
+
+.btn-danger {
+  border-color: #000000;
+}
+
+.msg {
+  border: 1px solid #808080;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  background: #FFFFFF;
+}
+
+.msg.success { border-color: #000000; }
+.msg.error { border-color: #000000; background: #D3D3D3; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #A9A9A9;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th { background: #D3D3D3; }
+
+code {
+  font-family: Consolas, monospace;
+  background: #D3D3D3;
+  padding: 1px 4px;
+}
+
+pre.code-block,
+pre {
+  border: 1px solid #808080;
+  padding: 12px;
+  overflow: auto;
+  background: #FFFFFF;
+  margin: 8px 0;
+}
+
+.form-actions { margin-top: 12px; }
+
+.inline-form {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 8px;
+}
+
+.stat-box {
+  border: 1px solid #A9A9A9;
+  padding: 8px;
+  text-align: center;
+}
+
+.stat-box strong { display: block; font-size: 20px; }
+
+.auth-box {
+  max-width: 400px;
+  margin: 40px auto;
+}
+
+.auth-box .panel { margin-bottom: 0; }
+
+/* 通知鈴鐺 */
+.site-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+
+.notify-bell {
+  position: relative;
+  display: inline-block;
+}
+
+.notify-bell summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  border: 1px solid #808080;
+  background: #FFFFFF;
+}
+
+.notify-bell summary::-webkit-details-marker { display: none; }
+
+.bell-icon { font-size: 16px; }
+
+.notify-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #000000;
+  border-radius: 50%;
+  margin-left: 2px;
+  vertical-align: top;
+}
+
+.notify-dropdown {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 100;
+  min-width: 280px;
+  max-width: 360px;
+  margin-top: 4px;
+}
+
+.notify-dropdown-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.notify-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.notify-list li {
+  border-bottom: 1px solid #D3D3D3;
+  padding: 8px 0;
+}
+
+.notify-list li.unread { background: #D3D3D3; padding: 8px; margin: 0 -8px; }
+
+.notify-msg { font-size: 13px; }
+
+.btn-small {
+  padding: 2px 8px;
+  font-size: 12px;
+  border: 1px solid #808080;
+  background: #FFFFFF;
+  cursor: pointer;
+}
+
+.charts-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.chart-box {
+  border: 1px solid #A9A9A9;
+  padding: 8px;
+  min-height: 280px;
+}
+
+.chart-box-wide {
+  grid-column: span 1;
+}
+
+.chart-canvas {
+  width: 100%;
+  height: 260px;
+}
+
+.sort-form {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sort-label {
+  display: inline;
+  margin: 0;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: auto;
+  max-width: none;
+}
